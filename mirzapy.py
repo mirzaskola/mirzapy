@@ -133,6 +133,13 @@ class Matrix:
             self.data = [[self.data[j][i] for j in range(self.rows)] for i in range(self.cols)]
             self.rows, self.cols = self.cols, self.rows
 
+    def verify_type(self, other):
+        """
+        Verifies if the input matrix is of the correct type before performing operations.
+        """
+        if not isinstance(other, Matrix):
+            raise TypeError("Cannot perform operation. Input must be a Matrix object.")
+
 
 def is_nested_list(lista):
     if not isinstance(lista, list):
